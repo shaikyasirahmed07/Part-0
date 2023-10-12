@@ -1,0 +1,87 @@
+#include <stdio.h> 
+void findmissingelements(int arr1[], int size1, int arr2[], int size2) {
+    for (int i = 0; i < size1; i++) {
+        int found = 0;
+        for (int j = 0; j < size2; j++) {
+            if (arr1[i] == arr2[j]) {
+                found = 1;
+                break;
+            }
+        }
+        if (!found) {
+            printf("%d ", arr1[i]);
+        }
+    }
+}
+
+int main() {
+    int size1, size2;
+    
+    printf("Enter the number of elements in the first array: ");
+    scanf("%d", &size1);
+    int arr1[size1];
+    
+    printf("Enter elements of the first array: ");
+    for (int k = 0; k < size1; k++) {
+        scanf("%d", &arr1[k]);
+    }
+    
+    printf("Enter the number of elements in the second array: ");
+    scanf("%d", &size2);
+    int arr2[size2];
+    
+    printf("Enter elements of the second array: ");
+    for (int l = 0; l < size2; l++) {
+        scanf("%d", &arr2[l]);
+    }
+    
+    printf("Missing elements in the second array: ");
+    findmissingelements(arr1, size1, arr2, size2);
+    
+    return 0;
+}
+
+
+--------------------------------------------------------------------------
+
+
+#include<stdio.h>
+int isEqualSum(int arr[], int n)
+{
+  int total_sum=0,leftsum;
+  for(int i=0;i<n;i++)
+  {
+    total_sum==arr[i];
+    if(leftsum==total_sum)
+    {
+      return 1;
+    }
+    leftsum+=arr[i];
+  }
+  return 0;
+}
+
+int main()
+{
+  int t;
+  scanf("%d",&t);
+  while(t--)
+  {
+      int n;
+      scanf("%d",&n);
+      int arr[n];
+      for(int i=0;i<n;i++)
+      {
+          scanf("%d",&arr[i]);
+      }
+  if(isEqualSum(arr,n))
+  {
+      printf("yes\n");
+  }
+  else
+  {
+      printf("NO\n");
+  }
+}
+return 0;
+}
